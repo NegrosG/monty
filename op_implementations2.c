@@ -44,7 +44,7 @@ void c_add(stack_t **stack, unsigned int line_num)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: cant't add, stack too short\n", line_num);
-		exit(EXIT_FAILURE)
+		exit(EXIT_FAILURE);
 	}
 
 	(*stack)->next->n += (*stack)->n;
