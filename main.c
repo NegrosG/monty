@@ -80,17 +80,23 @@ void process_file(FILE *fp)
 	free(line);
 }
 
+/**
+ * free_stack - Function to free the stacks
+ * @stack: doubly linked list to be free
+ */
+
 void free_stack(stack_t **stack)
 {
-    stack_t *curr_node = *stack;
-    stack_t *next_node;
+	stack_t *curr_node = *stack;
+	stack_t *next_node;
 
-    while (curr_node != NULL) {
-        next_node = curr_node->next;
-        free(curr_node);
-        curr_node = next_node;
-    }
-    *stack = NULL;
+	while (curr_node != NULL)
+	{
+		next_node = curr_node->next;
+		free(curr_node);
+		curr_node = next_node;
+	}
+	*stack = NULL;
 }
 
 
