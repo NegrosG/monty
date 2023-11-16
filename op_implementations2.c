@@ -67,3 +67,27 @@ void c_nop(stack_t **stack, unsigned int line_num)
 	(void)stack;
 	(void)line_num;
 }
+
+/**
+  *c_mod - function performs modulus of second by first
+  *top of stack
+  *@stack: Pointer to the top of the stack
+  *@line_num: The line of the Monty bytecode file
+  */
+
+void c_mod(stack_t **stack, unsigned int line_num)
+{
+	if ((*stack)->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+	if (stack == NULL || *stack == NULL || !(*stack)->n)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+
+	(*stack)->next->n %= (*stack)->n;
+	c_pop(stack, line_num);
+}

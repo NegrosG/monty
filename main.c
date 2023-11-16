@@ -49,7 +49,7 @@ void process_file(FILE *fp)
 
 	instruction_t op_func[] = {
 			{"push", c_push}, {"pall", c_pall}, {"pint", c_pint}, {"pop", c_pop},
-			{"swap", c_swap}, {"add", c_add}, {"nop", c_nop}, {NULL, NULL}
+			{"swap", c_swap}, {"add", c_add}, {"nop", c_nop}, {"sub", c_sub}, {"div", c_div}, {"mul", c_mul}, {"mod", c_mod}, {"pstr", c_pstr}, {NULL, NULL}
 	};
 
 	while ((read = getline(&line, &len, fp)) != -1)

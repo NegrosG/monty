@@ -47,7 +47,11 @@ void c_swap(stack_t **stack, unsigned int line_num);
 void c_add(stack_t **stack, unsigned int line_num);
 void c_nop(stack_t **stack, unsigned int line_num);
 int is_num(char *str);
-
+void c_mod(stack_t **stack, unsigned int line_num);
+void c_sub(stack_t **stack, unsigned int line_num);
+void c_mul(stack_t **stack, unsigned int line_num);
+void c_div(stack_t **stack, unsigned int line_num);
+void c_pstr(stack_t **stack, unsigned int line_num);
 
 void process_file(FILE *fp);
 void cleanup(FILE *fp, char *line, stack_t **stack);
