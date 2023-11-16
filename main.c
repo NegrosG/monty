@@ -48,7 +48,7 @@ void process_file(FILE *fp)
 	int x;
 
 	instruction_t op_func[] = {
-			{"push", c_push}, {"pall", c_pall}, {"pint", c_pint}, {"pop", c_pop},
+			{"push", c_push}, {"pall", c_pall}, {"pint", c_pint}, {"pop", c_pop}, {"swap", c_swap}, {"add", c_add}, {"nop", c_nop},
 			{NULL, NULL}
 	};
 
