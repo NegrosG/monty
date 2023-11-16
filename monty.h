@@ -50,5 +50,6 @@ int is_num(char *str);
 
 
 void process_file(FILE *fp);
-void cleanup(FILE *fp, char *line);
+void cleanup(FILE *fp, char *line, stack_t **stack);
+void free_stack(stack_t **stack);
 #endif

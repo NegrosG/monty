@@ -10,6 +10,7 @@
 int main(int ac, char *av[])
 {
 	FILE *fp;
+	stack_t *stack = NULL;
 
 	if (ac != 2)
 	{
@@ -26,7 +27,7 @@ int main(int ac, char *av[])
 
 	process_file(fp);
 
-	cleanup(fp, NULL);
+	cleanup(fp, NULL, &stack);
 
 	return (EXIT_SUCCESS);
 }
@@ -70,20 +71,39 @@ void process_file(FILE *fp)
 		if (!op_func[x].opcode)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_num, opcode);
-			cleanup(fp, line);
+			cleanup(fp, line, &stack);
 			exit(EXIT_FAILURE);
 		}
+		free(line);
+		line = NULL;
 	}
+	free(line);
 }
+
+void free_stack(stack_t **stack)
+{
+    stack_t *curr_node = *stack;
+    stack_t *next_node;
+
+    while (curr_node != NULL) {
+        next_node = curr_node->next;
+        free(curr_node);
+        curr_node = next_node;
+    }
+    *stack = NULL;
+}
+
 
 /**
  * cleanup - Function to free allocated memory and close the file
  * @fp: Opened file
  * @line: Memory to be freed
+ * @stack: doubly linked list
  */
 
-void cleanup(FILE *fp, char *line)
+void cleanup(FILE *fp, char *line, stack_t **stack)
 {
 	free(line);
+	free_stack(stack);
 	fclose(fp);
 }
