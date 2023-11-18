@@ -77,7 +77,7 @@ void c_nop(stack_t **stack, unsigned int line_num)
 
 void c_mod(stack_t **stack, unsigned int line_num)
 {
-	if (stack == NULL || *stack == NULL || !(*stack)->n)
+	if (stack == NULL || *stack == NULL || !(*stack)->n == NULL)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line_num);
 		exit(EXIT_FAILURE);
