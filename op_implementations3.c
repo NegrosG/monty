@@ -85,3 +85,32 @@ void c_pstr(stack_t **stack, unsigned int line_num)
 	}
 	fprintf(stdout, "\n");
 }
+
+/**
+ * c_pchar - prints the char at the top of the stack, followed by a new line.
+ * @stack: A pointer to the top of the stack.
+ * @line_num: The line number in the Monty bytecode file
+ * where the push operation is called.
+ */
+
+void c_pchar(stack_t **stack, unsigned int line_num)
+{
+	int ascii_val;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+
+	ascii_val = (*stack)->n;
+
+	if (ascii_val < 0 || ascii_val > 127)
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%c\n", ascii_val);
+}
+

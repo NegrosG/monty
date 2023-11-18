@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
-  *c_swap - pushes a new element onto the stack
+  *c_swap -  Swaps the top two elements of the stack.
   *@stack: A pointer to the top of the stack
   *@line_num: The line number in the Monty bytecode file
   *where the push operation is called
@@ -31,7 +31,7 @@ void c_swap(stack_t **stack, unsigned int line_num)
 }
 
 /**
-  *c_add - pushes a new element onto the stack.
+  *c_add -  Adds the top two elements of the stack.
   *@stack: A pointer to the top of the stack.
   *@line_num: The line number in the monty Bytecode file
   *where the push operation is called.
@@ -56,7 +56,7 @@ void c_add(stack_t **stack, unsigned int line_num)
 }
 
 /**
-  *c_nop - Pushes a new element onto the stack
+  *c_nop - Doesn’t do anything.
   *@stack: A pointer to the top of the stack.
   *@line_num: The line number in the Monty bytecode file
   *where the push operation is called

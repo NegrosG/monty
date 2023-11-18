@@ -52,6 +52,7 @@ void c_sub(stack_t **stack, unsigned int line_num);
 void c_mul(stack_t **stack, unsigned int line_num);
 void c_div(stack_t **stack, unsigned int line_num);
 void c_pstr(stack_t **stack, unsigned int line_num);
+void c_pchar(stack_t **stack, unsigned int line_num);
 
 void process_file(FILE *fp);
 void cleanup(FILE *fp, char *line, stack_t **stack);

@@ -58,7 +58,8 @@ int is_num(char *str)
 }
 
 /**
- * c_pall - Pushes a new element onto the stack.
+ * c_pall - Prints all the values on the stack,
+ * starting from the top of the stack.
  * @stack: A pointer to the top of the stack.
  * @line_num: The line number in the Monty bytecode file
  * where the push operation is called.
@@ -79,7 +80,7 @@ void c_pall(stack_t **stack, unsigned int line_num)
 }
 
 /**
- * c_pint - Pushes a new element onto the stack.
+ * c_pint - Prints the value at the top of the stack, followed by a new line.
  * @stack: A pointer to the top of the stack.
  * @line_num: The line number in the Monty bytecode file
  * where the push operation is called.
@@ -97,7 +98,7 @@ void c_pint(stack_t **stack, unsigned int line_num)
 }
 
 /**
- * c_pop - Pushes a new element onto the stack.
+ * c_pop - Removes the top element of the stack
  * @stack: A pointer to the top of the stack.
  * @line_num: The line number in the Monty bytecode file
  * where the push operation is called.
