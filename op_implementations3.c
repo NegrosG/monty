@@ -80,10 +80,10 @@ void c_pstr(stack_t **stack, unsigned int line_num)
 
 	while (str != NULL && str->n > 0 && str->n < 128)
 	{
-		fprintf(stdout, "%c", str->n);
+		printf("%c", str->n);
 		str = str->next;
 	}
-	fprintf(stdout, "\n");
+	printf("\n");
 }
 
 /**
