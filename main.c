@@ -48,18 +48,17 @@ void process_file(FILE *fp)
 	int x;
 
 	instruction_t op_func[] = {
-			{"push", c_push}, {"pall", c_pall}, {"pint", c_pint}, {"pop", c_pop}, {"swap", c_swap},
-			{"add", c_add}, {"nop", c_nop}, {"sub", c_sub}, {"div", c_div}, {"mul", c_mul},
-			{"mod", c_mod}, {"pstr", c_pstr}, {NULL, NULL}
+			{"push", c_push}, {"pall", c_pall}, {"pint", c_pint}, {"pop", c_pop},
+			{"swap", c_swap}, {"add", c_add}, {"nop", c_nop}, {"sub", c_sub},
+			{"div", c_div}, {"mul", c_mul}, {"mod", c_mod}, {"pstr", c_pstr},
+			{NULL, NULL}
 	};
-
 	while ((read = getline(&line, &len, fp)) != -1)
 	{
 		line_num++;
 		opcode = strtok(line, " \n\t");
 		if (opcode == NULL || opcode[0] == '#')
 			continue;
-
 		for (x = 0; op_func[x].opcode; x++)
 		{
 			if (strcmp(opcode, op_func[x].opcode) == 0)
@@ -68,7 +67,6 @@ void process_file(FILE *fp)
 				break;
 			}
 		}
-
 		if (!op_func[x].opcode)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_num, opcode);
