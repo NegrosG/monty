@@ -51,7 +51,7 @@ void process_file(FILE *fp)
 			{"push", c_push}, {"pall", c_pall}, {"pint", c_pint}, {"pop", c_pop},
 			{"swap", c_swap}, {"add", c_add}, {"nop", c_nop}, {"sub", c_sub},
 			{"div", c_div}, {"mul", c_mul}, {"mod", c_mod}, {"pstr", c_pstr},
-			{"pchar", c_pchar}, {NULL, NULL}
+			{"pchar", c_pchar}, {"rotr", c_rotr}, {"rotl", c_rotl}, {NULL, NULL}
 	};
 	while ((read = getline(&line, &len, fp)) != -1)
 	{
